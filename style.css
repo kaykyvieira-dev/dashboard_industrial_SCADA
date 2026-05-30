@@ -1,0 +1,141 @@
+/* Configurações Gerais - Aparência de Terminal/Painel Industrial */
+body {
+    background-color: #1a1d24; /* Cinza Escuro Industrial */
+    color: #d1d5db;
+    font-family: 'Courier New', Courier, monospace; /* Fonte Monoespaçada típica de CLPs */
+    padding: 20px;
+    margin: 0;
+}
+
+main {
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+/* Estrutura dos Cards do Painel */
+.card {
+    background-color: #222630;
+    border: 2px solid #374151;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+h3, h4 {
+    color: #38bdf8; /* Azul Elétrico / Industrial */
+    margin-top: 0;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Inputs e Seletores */
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"], select {
+    flex: 1;
+    background-color: #111827;
+    color: #ffffff;
+    border: 1px solid #4b5563;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+input:disabled, select:disabled {
+    background-color: #374151;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Botões */
+button {
+    background-color: #0284c7; /* Azul padrão */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0369a1;
+}
+
+button:disabled {
+    background-color: #4b5563;
+    cursor: not-allowed;
+}
+
+/* Visor de Telemetria */
+.visor-temperatura {
+    background-color: #111827;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px dashed #374151;
+}
+
+.graus {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+    color: #f3f4f6;
+}
+
+.status-container {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Classes de Feedback Visual Dinâmico (Injetadas pelo JS) */
+.normal {
+    color: #10b981 !important; /* Verde */
+}
+
+.alerta {
+    color: #f97316 !important; /* Laranja */
+    font-weight: bold;
+}
+
+.perigo {
+    color: #ef4444 !important; /* Vermelho */
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: pulsoAlarme 1s infinite; /* Efeito visual de alarme piscando */
+}
+
+@keyframes pulsoAlarme {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* Seção de Emergência */
+.bloco-emergencia {
+    border: 2px solid #7f1d1d;
+    background-color: #2d1313;
+}
+
+.bloco-emergencia h4 {
+    color: #ef4444;
+}
+
+#btnEmergencia {
+    background-color: #dc2626; /* Vermelho Emergência */
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#btnEmergencia:hover:not(:disabled) {
+    background-color: #b91c1c;
+}
