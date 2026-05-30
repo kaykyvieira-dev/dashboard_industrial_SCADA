@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard Industrial SCADA – Indústria 4.0</title>
+</head>
+<body>
+    <main>
+        <div class="card autenticacao">
+            <h3>Controle de Acesso Biométrico/Manual</h3>
+            <p>Insira a credencial do operador para liberar os sistemas críticos</p>
+            <div class="input-group">
+                <input type="text" id="nome" placeholder="Digite seu nome">
+                <button onclick="validarAcesso()">Verificar</button>
+            </div>
+            <p id="msg"></p>
+        </div>
+
+        <div class="card painel-maquinas">
+            <h3>Linha de Produção</h3>
+            <p>Selecione o Equipamento:</p>
+            <select id="equipamentoDropdown" onchange="verificarStatus()"></select>
+            <p class="status-container">Status Equipamento: <span id="statusEquipamento">-</span></p>
+        </div>
+
+        <div class="card telemetria">
+            <h3>Telemetria Térmica</h3>
+            <p>Atualização em tempo real via sensores RTD</p>
+            <div class="visor-temperatura">
+                <p class="graus"><span id="temp">0</span>°C</p>
+                <p id="statusTermico" class="normal">Aguardando Operador...</p>
+            </div>
+        </div>  
+
+        <div class="card bloco-emergencia">
+            <h4>SISTEMA INTERTRAVAMENTO AUTOMÁTICO</h4>
+            <p id="msgSeguranca">Sensores operando dentro dos limites de segurança</p>
+            <button id="btnEmergencia" onclick="paradaDeEmergencia()">PARADA DE EMERGÊNCIA MANUAL</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
